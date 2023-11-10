@@ -12,7 +12,7 @@
       <input type="text" class="form__input" placeholder="Фамилия"
              v-model="formDataStore.surname" required autocomplete="none"
              @input="dirty('surname')" @blur="dirty('surname')"
-             :class="{input__danger: empty.name}"
+             :class="{input__danger: empty.surname}"
       >
       <span class="danger" v-if="empty.surname">Пожалуйста введите фамилию</span>
     </div>
@@ -20,7 +20,7 @@
       <input type="text" class="form__input" placeholder="Email"
              v-model.trim="formDataStore.email" required autocomplete="none"
              @input="dirty('email')" @blur="dirty('email')"
-             :class="{input__danger: empty.name}"
+             :class="{input__danger: empty.email}"
       >
       <span class="danger" v-if="empty.email">Пожалуйста введите email</span>
       <span class="danger" v-if="touchedEmail && !empty.email && !this.checkEmail">Пожалуйста введите корректный email</span>
@@ -36,7 +36,7 @@
       <textarea class="form__input form__input-textarea" placeholder="Сообщение"
                 v-model="formDataStore.message" required autocomplete="none"
                 @input="dirty('message')" @blur="dirty('message')"
-                :class="{input__danger: empty.name}"
+                :class="{input__danger: empty.message}"
       ></textarea>
       <span class="danger" v-if="empty.message">Пожалуйста введите сообщение</span>
     </div>
