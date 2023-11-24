@@ -1,0 +1,116 @@
+@use "src/styles";
+
+.container {
+  width: 970px;
+  height: 450px;
+  padding: 40px;
+  margin: 0 auto;
+  border: 1px solid styles.$accent;
+}
+
+.weather {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather__text-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.weather__search-city {
+  display: flex;
+  gap: 50px;
+}
+
+.location {
+  text-align: center;
+  padding: 8px 0;
+  margin: 10px 0;
+  border-top: 1px solid styles.$accent;
+  border-bottom: 1px solid styles.$accent;
+}
+
+.weather__input {
+  width: 230px;
+  text-align: center;
+  border: 1px solid styles.$light;
+  border-radius: 4px;
+  padding: 8px;
+  background-color: styles.$footer_bg;
+  &::placeholder {
+    color: styles.$placeholder;
+  }
+}
+
+.weather__btn {
+  padding: 8px;
+  background-color: styles.$dark_accent;
+  border: 1px solid styles.$accent;
+  border-radius: 4px;
+}
+
+.weather__listing {
+  p {
+    border-bottom: 1px solid styles.$dark_accent;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+    span {
+      display: inline-block;
+      text-align: right;
+      width: 150px;
+      margin: 0 40px 0 50px;
+    }
+  }
+}
+
+.weather__image {
+  max-width: 400px;
+  max-height: 300px;
+}
+
+.loader-container {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.loader {
+  border: 4px solid styles.$light;
+  border-top: 10px solid styles.$light_accent;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.weather-error {
+  text-align: center;
+  color: styles.$danger;
+  background-color: rgba(141, 53, 53, 0.2);
+  padding: 14px 0;
+  border-top: 1px solid styles.$danger;
+  border-bottom: 1px solid styles.$danger;
+}

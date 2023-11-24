@@ -1,0 +1,47 @@
+<div class="weather">
+  <div class="container">
+    <div class="weather__inner">
+      <div class="weather__text-info">
+        <div class="weather__search-city">
+          <input type="text" class="weather__input" placeholder="Введите название города" autocomplete="off" [(ngModel)]="city">
+          <button class="btn weather__btn" (click)="searchLocation()">Узнать погоду</button>
+        </div>
+        <div class="weather__display-location">
+          <div class="loading">
+            <div *ngIf="getLoadLocation()"> Получение информации о городе </div>
+            <div *ngIf="getLoadLocation()" class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+          <p *ngIf="getLocationInfo()" class="location">Погода для города: <b>{{getLocationInfo()}}</b></p>
+        </div>
+        <div class="weather__display-weather">
+          <div class="loading">
+            <div *ngIf="getLoadWeather()"> Получение информации о погоде </div>
+            <div *ngIf="getLoadWeather()" class="loader-container">
+              <div class="loader"></div>
+            </div>
+          </div>
+          <div *ngIf="getWeatherInfo()" class="weather__listing">
+            <p><span>Погода:</span><b>{{getWeatherInfo()?.description}}</b></p>
+            <p><span>Температура:</span><b>{{getWeatherInfo()?.temp}}</b></p>
+            <p><span>Ощущается как:</span><b>{{getWeatherInfo()?.feelsLike}}</b></p>
+            <p><span>Давление:</span><b>{{getWeatherInfo()?.pressure}}</b></p>
+            <p><span>Скорость ветра:</span><b>{{getWeatherInfo()?.windSpeed}}</b></p>
+            <p><span>Влажность:</span><b>{{getWeatherInfo()?.humidity}}</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="weather__display-image">
+        <div class="loading">
+          <div *ngIf="getLoadImage()"> Получение картинки </div>
+          <div *ngIf="getLoadImage()" class="loader-container">
+            <div class="loader"></div>
+          </div>
+        </div>
+        <img *ngIf="getImageUrl()" [src]="getImageUrl()" alt="WeatherImg" class="weather__image">
+      </div>
+    </div>
+    <div class="weather-error" *ngIf="getError()"> {{getError()}}</div>
+  </div>
+</div>
