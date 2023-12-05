@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "prepare": "husky install"
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix --color"
   },
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   },
 	"husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "precommit": "lint-staged"
     }
   },
   "lint-staged": {
