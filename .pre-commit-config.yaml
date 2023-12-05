@@ -1,0 +1,8 @@
+- repo: https://github.com/pre-commit/mirrors-eslint
+  rev: v8.4.0
+  hooks:
+    - id: eslint
+    additional_dependencies:
+        - eslint-plugin-html@7.1.0
+        - eslint-plugin-import@2.29.0
+        - eslint-plugin-prettier@5.0.1
