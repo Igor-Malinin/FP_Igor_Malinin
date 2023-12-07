@@ -1,10 +1,9 @@
-const d =12;
+const d =  12;
 
 function a(variable ) {
-  
-	return variable + 2;
+  return variable + 2;
 }
 
-var k = 5;
+var k=5;
 
-console.log(a(d));
+console.log(a(d), k);
