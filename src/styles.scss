@@ -1,0 +1,174 @@
+
+// Colors
+$dark: #242B33;
+$light_accent: #facc2c;
+$accent: #D4C17F;
+$dark_accent: rgba(107, 96, 56, 0.62);
+$white: #fff;
+$footer_bg: #2D343C;
+$placeholder: #BEBEBE;
+$light: #E7E7E7;
+$danger: #ffb4b4;
+
+body {
+  font-family: sans-serif;
+  background: $dark;
+  color: $white;
+  font-size: 16px;
+}
+
+a {
+  color: $white;
+  transition: color .15s ease-in;
+  &:hover {
+    color: $accent;
+  }
+  &.router-link-exact-active {
+    color: $accent;
+  }
+}
+
+.link_bold {
+  font-weight: 700;
+  color: $accent;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1140px;
+
+  &__small {
+    max-width: 824px;
+  }
+}
+
+.visually_hidden {
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.none {
+  display: none !important;
+}
+
+.no_scroll {
+  overflow-y: hidden;
+}
+
+.title_2 {
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: $accent;
+}
+
+.btn {
+  border: 1px solid $accent;
+  border-radius: 5px;
+  padding: 8px 12px;
+  &:hover {
+    filter: saturate(150%) hue-rotate(30deg);
+    background-color: rgba(20, 30, 42, 0.56);
+  }
+}
+
+.danger {
+  text-align: center;
+  color: $danger;
+}
+/* Reset and base styles  */
+* {
+  padding: 0px;
+  margin: 0px;
+  border: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Links */
+
+a, a:link, a:visited  {
+  text-decoration: none;
+}
+
+a:hover  {
+  text-decoration: none;
+}
+
+/* Common */
+
+aside, nav, footer, header, section, main {
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+ul, ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+/* Form */
+
+input, textarea, button, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  background-color: transparent;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button, input[type="submit"] {
+  display: inline-block;
+  box-shadow: none;
+  background-color: transparent;
+  background: none;
+  cursor: pointer;
+}
+
+input:focus, input:active,
+button:focus, button:active {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+label {
+  cursor: pointer;
+}
+
+legend {
+  display: block;
+}
