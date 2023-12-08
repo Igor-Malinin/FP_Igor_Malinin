@@ -1,0 +1,33 @@
+<div class="animals" (click)="hideAllAdditional()">
+  <div class="container">
+    <div class="animals__inner">
+      <div class="animals__inner_list">
+        <div
+          (click)="toggleAnimalAdditional(animal, $event)"
+          class="animals__animals-list"
+          *ngFor="let animal of getAnimals()"
+          [ngStyle]="{display: animal.display ? 'flex' : 'none'}"
+        >
+          <p>{{animal.type}}</p>
+          <p>{{animal.name}}</p>
+          <div *ngIf="animal.displayAdditional" class="animals-list__additional">
+            <p><span>age:</span><b>{{animal.age}}</b></p>
+            <p><span>height:</span><b>{{animal.height}}</b></p>
+            <p><span>weight:</span><b>{{animal.weight}}</b></p>
+            <p><span>color:</span><b>{{animal.color}}</b></p>
+            <p><span>vaccination:</span><b>{{animal.vaccination}}</b></p>
+          </div>
+        </div>
+      </div>
+      <div class="animals__inner_control-elements">
+        <button
+          class="btn"
+          [ngClass]="{'hide-cats': hide, 'show-cats': !hide}"
+          (click)="toggleCats()"
+        >
+          {{hide ? 'Скрыть котиков' : 'Показать котиков'}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
